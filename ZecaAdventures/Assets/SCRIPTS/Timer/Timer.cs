@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+[SerializeField] class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     public float remainingTime;
@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
             if(remainingTime < 0)
             {
               remainingTime = 0;
-              // GameOver();
+              FindObjectOfType<GameManager>().GameOver();
             }
             
             
